@@ -6,6 +6,8 @@ import com.aidarkstu.service.PositionService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
+import java.util.Date;
+import java.util.List;
 import java.util.NoSuchElementException;
 
 @Service
@@ -15,6 +17,7 @@ public class PositionServiceImpl implements PositionService {
 
     @Override
     public Position save(Position position) {
+        position.setCreatedDate(new Date());
         return positionRepository.save(position);
     }
 
@@ -22,6 +25,7 @@ public class PositionServiceImpl implements PositionService {
     public Position update(Long id, Position position) {
         if (positionRepository.existsById(id)) {
             position.setId(id);
+            position.setModifiedDate(new Date());
             return positionRepository.save(position);
         } else {
             throw new NoSuchElementException("No position found with id " + id);
@@ -30,11 +34,18 @@ public class PositionServiceImpl implements PositionService {
 
     @Override
     public void deleteById(Long id) {
+        Position position = positionRepository.findById(id).orElseThrow();
+        position.setDeletedDate(new Date());
         positionRepository.deleteById(id);
     }
 
     @Override
     public Position findById(Long id) {
         return positionRepository.findById(id).orElseThrow();
+    }
+
+    @Override
+    public List<Position> getPositions() {
+        return positionRepository.findAllByDeletedDateIsNull();
     }
 }
