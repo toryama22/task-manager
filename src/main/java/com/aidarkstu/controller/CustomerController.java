@@ -2,7 +2,7 @@ package com.aidarkstu.controller;
 
 import com.aidarkstu.entity.Customer;
 import com.aidarkstu.repository.CustomerRepository;
-import com.aidarkstu.dto.request.NewCustomerRequest;
+import com.aidarkstu.payload.request.NewCustomerRequest;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;

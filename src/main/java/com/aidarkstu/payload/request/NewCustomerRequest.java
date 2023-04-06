@@ -1,4 +1,4 @@
-package com.aidarkstu.dto.request;
+package com.aidarkstu.payload.request;
 
 public record NewCustomerRequest(
         String name,
