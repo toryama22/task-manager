@@ -11,9 +11,8 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 public class Department extends BaseEntity {
     @Column(name = "department_name", length = 100)
-    String departmentName;
-
-    String description;
+    private String departmentName;
+    private String description;
 
     public Department (DepartmentDto dto) {
         super(dto);

@@ -18,4 +18,5 @@ public class Position extends BaseEntity {
         super(dto);
         this.positionTitle = dto.getPositionTitle();
     }
+
 }

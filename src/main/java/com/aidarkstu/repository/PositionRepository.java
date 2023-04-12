@@ -1,5 +1,6 @@
 package com.aidarkstu.repository;
 
+import com.aidarkstu.entity.Department;
 import com.aidarkstu.entity.Position;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Modifying;
@@ -15,6 +16,6 @@ public interface PositionRepository extends JpaRepository<Position, Long> {
     @Query("UPDATE Position p SET p.deletedDate=current_timestamp WHERE p.id=:id")
     void deleteById(Long id);
 
-
+    Position findAllByIdAndDeletedDateIsNull(Long id);
     List<Position> findAllByDeletedDateIsNull();
 }

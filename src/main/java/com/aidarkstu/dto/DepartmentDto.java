@@ -9,8 +9,8 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 public class DepartmentDto extends BaseDto {
-    String departmentName;
-    String description;
+    private String departmentName;
+    private String description;
 
     public DepartmentDto(Department department) {
         super(department);
