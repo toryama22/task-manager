@@ -33,8 +33,6 @@ public class DepartmentServiceImpl implements DepartmentService {
 
     @Override
     public void deleteById(Long id) {
-        Department department = departmentRepository.findById(id).orElseThrow();
-        department.setDeletedDate(new Date());
         departmentRepository.deleteById(id);
     }
 

@@ -23,7 +23,7 @@ public class Project extends BaseEntity {
     @JoinColumn(name = "project_lead_id")
     Employee projectLead;
 
-    @Column(name = "project_description")
+    @Column(name = "project_description", columnDefinition = "TEXT")
     String description;
 
     public Project(ProjectDto dto) {

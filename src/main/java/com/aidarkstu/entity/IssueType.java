@@ -1,24 +1,28 @@
 package com.aidarkstu.entity;
 
-import com.aidarkstu.dto.DepartmentDto;
+import com.aidarkstu.dto.IssueTypeDto;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
+import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
 @Entity
 @Data
+@AllArgsConstructor
 @NoArgsConstructor
-public class Department extends BaseEntity {
-    @Column(name = "department_name", length = 100)
-    private String departmentName;
+public class IssueType extends BaseEntity {
+    private String typeName;
+
     @Column(columnDefinition = "TEXT")
     private String description;
 
-    public Department (DepartmentDto dto) {
+    public IssueType(IssueTypeDto dto) {
         super(dto);
-        this.departmentName = dto.getDepartmentName();
+        this.typeName = dto.getTypeName();
         this.description = dto.getDescription();
     }
+
+
 
 }

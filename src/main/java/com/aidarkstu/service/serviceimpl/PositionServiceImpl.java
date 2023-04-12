@@ -34,8 +34,6 @@ public class PositionServiceImpl implements PositionService {
 
     @Override
     public void deleteById(Long id) {
-        Position position = positionRepository.findById(id).orElseThrow();
-        position.setDeletedDate(new Date());
         positionRepository.deleteById(id);
     }
 

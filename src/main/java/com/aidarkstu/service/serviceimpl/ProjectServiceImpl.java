@@ -38,8 +38,6 @@ public class ProjectServiceImpl implements ProjectService {
 
     @Override
     public void deleteById(Long id) {
-        Project project = projectRepository.findById(id).orElseThrow();
-        project.setDeletedDate(new Date());
         projectRepository.deleteById(id);
     }
 
