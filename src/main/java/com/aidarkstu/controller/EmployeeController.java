@@ -17,8 +17,6 @@ import java.util.List;
 @RequestMapping("api/employee")
 public class EmployeeController {
     private final EmployeeService employeeService;
-    private final DepartmentService departmentService;
-    private final PositionService positionService;
 
     @GetMapping("/{id}")
     public ResponseEntity<EmployeeDto> getEmployee(@PathVariable("id") Long id) {

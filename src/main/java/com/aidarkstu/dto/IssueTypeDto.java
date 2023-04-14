@@ -12,10 +12,12 @@ import lombok.NoArgsConstructor;
 public class IssueTypeDto extends BaseDto {
     private String typeName;
     private String description;
+    private String iconUrl;
 
     public IssueTypeDto(IssueType issueType) {
         super(issueType);
         this.typeName = issueType.getTypeName();
         this.description = issueType.getDescription();
+        this.iconUrl = issueType.getIconUrl();
     }
 }

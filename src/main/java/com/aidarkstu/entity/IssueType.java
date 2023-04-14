@@ -17,10 +17,13 @@ public class IssueType extends BaseEntity {
     @Column(columnDefinition = "TEXT")
     private String description;
 
+    private String iconUrl;
+
     public IssueType(IssueTypeDto dto) {
         super(dto);
         this.typeName = dto.getTypeName();
         this.description = dto.getDescription();
+        this.iconUrl = dto.getIconUrl();
     }
 
 
