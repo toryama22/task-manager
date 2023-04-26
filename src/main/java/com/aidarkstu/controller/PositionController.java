@@ -13,8 +13,8 @@ import java.util.Date;
 import java.util.List;
 
 @RestController
-@RequiredArgsConstructor
 @RequestMapping("api/position")
+@RequiredArgsConstructor
 public class PositionController {
     private final PositionServiceImpl positionService;
 
